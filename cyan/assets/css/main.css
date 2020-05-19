@@ -1261,7 +1261,7 @@ input, select, textarea {
 		-ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease;
 		transition: opacity 0.5s ease, transform 0.5s ease;
 		max-width: calc(100vw - 6em);
-		width: 75em;
+		width: 70em;
 	}
 
 		.panel > .image {
@@ -1274,7 +1274,7 @@ input, select, textarea {
 			background-repeat: no-repeat;
 			background-size: cover;
 			border-radius: 0;
-			min-height: 45em;
+			min-height: 40em;
 			width: 50%;
 			z-index: 1;
 		}
