@@ -50,7 +50,7 @@
 				@include vendor('transition', (
 					'opacity #{_duration(transition)} ease'
 				));
-				background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="112px" height="96px" viewBox="0 0 112 96" zoomAndPan="disable"><style>line { stroke: #{_palette(border)}; stroke-width: 4px }</style><line x1="0" y1="46" x2="112" y2="46" /><line x1="24" y1="22" x2="0" y2="46" /><line x1="24" y1="70" x2="0" y2="46" /></svg>');
+				background-image: svg-url('<svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="112px" height="96px" viewBox="0 0 112 96" zoomAndPan="disable"><style>line { stroke: #{_palette(border)}; stroke-width: 4px }</style><line x1="0" y1="46" x2="112" y2="46" /><line x1="24" y1="22" x2="0" y2="46" /><line x1="24" y1="70" x2="0" y2="46" /></svg>');
 				background-position: center;
 				background-repeat: no-repeat;
 				background-size: contain;
@@ -69,7 +69,7 @@
 				@include vendor('transition', (
 					'opacity #{_duration(transition)} ease'
 				));
-				background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="112px" height="96px" viewBox="0 0 112 96" zoomAndPan="disable"><style>line { stroke: #{_palette(accent)}; stroke-width: 4px }</style><line x1="0" y1="46" x2="112" y2="46" /><line x1="24" y1="22" x2="0" y2="46" /><line x1="24" y1="70" x2="0" y2="46" /></svg>');
+				background-image: svg-url('<svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="112px" height="96px" viewBox="0 0 112 96" zoomAndPan="disable"><style>line { stroke: #{_palette(accent)}; stroke-width: 4px }</style><line x1="0" y1="46" x2="112" y2="46" /><line x1="24" y1="22" x2="0" y2="46" /><line x1="24" y1="70" x2="0" y2="46" /></svg>');
 				background-position: center;
 				background-repeat: no-repeat;
 				background-size: contain;

@@ -467,7 +467,7 @@ input, select, textarea {
 		}
 
 	select {
-		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='%23cccccc' /%3E%3C/svg%3E");
+		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='https://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='%23cccccc' /%3E%3C/svg%3E");
 		background-size: 1.25rem;
 		background-repeat: no-repeat;
 		background-position: calc(100% - 1rem) center;
@@ -1037,7 +1037,7 @@ input, select, textarea {
 				-webkit-transition: opacity 0.2s ease;
 				-ms-transition: opacity 0.2s ease;
 				transition: opacity 0.2s ease;
-				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='112px' height='96px' viewBox='0 0 112 96' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23cccccc%3B stroke-width: 4px %7D%3C/style%3E%3Cline x1='0' y1='46' x2='112' y2='46' /%3E%3Cline x1='24' y1='22' x2='0' y2='46' /%3E%3Cline x1='24' y1='70' x2='0' y2='46' /%3E%3C/svg%3E");
+				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='https://www.w3.org/2000/svg' xmlns:xlink='https://www.w3.org/1999/xlink' width='112px' height='96px' viewBox='0 0 112 96' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23cccccc%3B stroke-width: 4px %7D%3C/style%3E%3Cline x1='0' y1='46' x2='112' y2='46' /%3E%3Cline x1='24' y1='22' x2='0' y2='46' /%3E%3Cline x1='24' y1='70' x2='0' y2='46' /%3E%3C/svg%3E");
 				background-position: center;
 				background-repeat: no-repeat;
 				background-size: contain;
@@ -1061,7 +1061,7 @@ input, select, textarea {
 				-webkit-transition: opacity 0.2s ease;
 				-ms-transition: opacity 0.2s ease;
 				transition: opacity 0.2s ease;
-				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='112px' height='96px' viewBox='0 0 112 96' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %2349c8ff%3B stroke-width: 4px %7D%3C/style%3E%3Cline x1='0' y1='46' x2='112' y2='46' /%3E%3Cline x1='24' y1='22' x2='0' y2='46' /%3E%3Cline x1='24' y1='70' x2='0' y2='46' /%3E%3C/svg%3E");
+				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='https://www.w3.org/2000/svg' xmlns:xlink='https://www.w3.org/1999/xlink' width='112px' height='96px' viewBox='0 0 112 96' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %2349c8ff%3B stroke-width: 4px %7D%3C/style%3E%3Cline x1='0' y1='46' x2='112' y2='46' /%3E%3Cline x1='24' y1='22' x2='0' y2='46' /%3E%3Cline x1='24' y1='70' x2='0' y2='46' /%3E%3C/svg%3E");
 				background-position: center;
 				background-repeat: no-repeat;
 				background-size: contain;
