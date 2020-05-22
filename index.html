@@ -147,6 +147,18 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+			<script type="text/javascript">
+				function configureAhoy() {
+				ahoy.configure({
+				visitsUrl: "https://usebasin.com/ahoy/visits",
+				eventsUrl: "https://usebasin.com/ahoy/events",
+				page: "9acb361a134a"
+				});
+				ahoy.trackView();
+				ahoy.trackSubmits();
+				}
+				</script>
+				<script src="https://cdn.jsdelivr.net/npm/ahoy.js@0.3.4/dist/ahoy.min.js" async defer onload="configureAhoy()" ></script>
 
 	</body>
 </html>
