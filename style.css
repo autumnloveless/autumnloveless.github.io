@@ -103,17 +103,20 @@ footer {
   margin-bottom: 15px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   .details-container {
-    min-width: 200px;
+    min-width: 250px;
   }
   .personal-info-container {
     min-width: 250px;
   }
   #personal-info-section {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   #personal-info-details-container {
-    align-items: flex-start;
+    align-items: center;
+    margin: 0;
   }
 }
