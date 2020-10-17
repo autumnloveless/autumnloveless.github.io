@@ -1,167 +1,82 @@
-<!DOCTYPE HTML>
-<!--
-	Indivisible by Pixelarity
-	pixelarity.com | hello@pixelarity.com
-	License: pixelarity.com/license
--->
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Autumn Loveless</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
-	</head>
-	<body class="is-preload-0 is-preload-1">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Autumn Loveless</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="imported-styles.css">
+</head>
+  <body>
+    <main>
+        <article class="contact-card m-4">
+            <div class="contact-card-header">
+                <div class="dark-mode-container">
+                    <label class="dark-mode-label" for="cb1">Dark Mode:</label>
+                    <input class="tgl tgl-light" id="cb1" type="checkbox"/> <!-- https://codepen.io/mallendeo/pen/eLIiG -->
+                    <label class="tgl-btn" for="cb1"></label> <!-- https://codepen.io/mallendeo/pen/eLIiG -->
+                </div>
+            </div>
+            <div class="contact-card-body">
+                <div class="container personal-info-container">
+                    <section id="personal-info-section" class="contact-card-section">
+                        <div id="profile-picture-container">
+                            <!-- <img id="profile-picture" class="picture-background gradient-background" src="icons/robot.svg" alt=""> -->
+                            <img id="profile-picture" class="" src="icons/person.svg" alt="">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+                        </div>
+                        <div id="personal-info-details-container">
+                            <h1 id="name" class="personal-info-field">Autumn Loveless</h1>
+                            <p class="personal-info-field">Software Developer & Maker</p>
+                            <p class="personal-info-field">Cambridge, MA, USA</p>
+                        </div>
+                    </section>
+                    <!-- <section id="interactive-animation-section" class="contact-card-section d-none d-lg-block">
+                        I am an animation5
+                    </section> -->
+                </div>
+                <div class="container details-container">
+                    <section id="description-section" class="contact-card-section">
+                        <h2 class="section-title">Description</h2>
+                        <p class="section-text">
+                            This is a description of who I am as a person, 
+                            what I value, what interests me, and 
+                            how I am going about pursuing those goals.
+                            This is a description of who I am as a person, 
+                            what I value, what interests me, and 
+                            how I am going about pursuing those goals.
+                            This is a description of who I am as a person, 
+                            what I value, what interests me, and 
+                            how I am going about pursuing those goals.
+                        </p>
+                    </section>
+                    <section id="skills-section" class="contact-card-section">
+                        <h2 class="section-title">Skills</h2>
+                        <p class="section-text">
+                            I am good at so many things. Like math. and typIng. Also video games. and other stuff too, like writing.
+                            I am good at so many things. Like math. and typIng. Also video games. and other stuff too, like writing.
+                            I am good at so many things. Like math. and typIng. Also video games. and other stuff too, like writing.
+                            I am good at so many things. Like math. and typIng. Also video games. and other stuff too, like writing.
+                            1. stuff
+                            2. More stuff
+                            3. even more things and stuff (Wow!)
+                            1. stuff
+                            2. More stuff
+                            3. even more things and stuff (Wow!)
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <!-- <div>Robot Icons made by <a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan">Darius Dan</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
-				<!-- Home -->
-					<article id="home" class="panel special">
-						<div class="image">
-							<img src="images/home.jpg" alt="" data-position="center center" />
-						</div>
-						<div class="content">
-							<div class="inner">
-								<header>
-									<h1>Autumn Loveless</h1>
-									<p>Full-Stack Software Developer</p>
-								</header>
-								<nav id="nav">
-									<ul class="actions stacked special animated spinY">
-										<li><a href="#work" class="button">Work</a></li>
-										<li><a href="#about" class="button">About</a></li>
-										<li><a href="#contact" class="button">Contact</a></li>
-										<!--<li><a href="#elements" class="button">Elements</a></li>-->
-									</ul>
-								</nav>
-								<ul class="icons">
-									<li><a href="https://github.com/autumnloveless/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="https://www.linkedin.com/in/autumn-loveless/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								</ul>
-							</div>
-						</div>
-					</article>
-
-				<!-- Work -->
-					<article id="work" class="panel secondary">
-						<div class="image">
-							<img src="images/work.jpg" alt="" data-position="center center" />
-						</div>
-						<div class="content">
-							<ul class="actions animated spinX">
-								<li><a href="#" class="button small back">Back</a></li>
-							</ul>
-							<div class="inner">
-								<header>
-									<h2>Work</h2>
-									<p>Turn your ideas into reality</p>
-								</header>
-								<p></p>
-								<p>I create software for a variety of clients ranging from individuals and small companies to large enterprises. I have 3+ years of experience creating websites, web apps, native apps, business intelligence, and video games. </p>
-								<p>I will work with you to create the exact solution you need while staying within your budget. Custom software doesn't have to be expensive. What can you do with your ideas?</p>
-								<a href="#contact" class="button primary">Contact Me</a>
-							</div>
-						</div>
-					</article>
-
-				<!-- About -->
-					<article id="about" class="panel secondary">
-						<div class="image">
-							<img src="images/lego-stormtrooper-art.jpg" alt="" data-position="center center" />
-						</div>
-						<div class="content">
-							<ul class="actions animated spinX">
-								<li><a href="#" class="button small back">Back</a></li>
-							</ul>
-							<div class="inner">
-								<header>
-									<h2>About</h2>
-									<p>A software developer with a heart</p>
-								</header>
-								<p>I am passionate about solving problems and helping people. Working in the software industry, I have been frustrated by the expensive barrier that has made custom software inaccessible to many people.</p>
-								<p>I started freelancing so that I could help provide people with software expertise, whatever their needs or budget. Creating custom software doesn't have to be expensive.</p>
-								<a href="#contact" class="button primary">Contact Me</a>
-							</div>
-						</div>
-					</article>
-
-				<!-- Contact -->
-					<article id="contact" class="panel secondary">
-						<div class="image">
-							<img src="images/contact.jpg" alt="" data-position="bottom center" />
-						</div>
-						<div class="content">
-							<ul class="actions animated spinX">
-								<li><a href="#" class="button small back">Back</a></li>
-							</ul>
-							<div class="inner">
-								<header>
-									<h2>Contact</h2>
-								</header>
-								<form accept-charset="UTF-8" method="post" action="https://usebasin.com/f/9acb361a134a">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" required/>
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" required/>
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" placeholder="Let's work together..." rows="5" required></textarea>
-										</div>
-										<div class="field">
-											<div class="g-recaptcha" data-sitekey="6Lew3SMUAAAAAJ82QoS7gqOTkRI_dhYrFy1f7Sqy"></div>
-										</div>
-										<div>
-											<input type="hidden" name="winnie_the_pooh">
-										</div>
-									</div>
-									<ul class="actions">
-										<li>
-											<button type="submit" class="button submit">Send Message</button>
-										</li>
-									</ul>
-								</form>
-							</div>
-						</div>
-					</article>
-
-				
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; Autumn Loveless</p>
-					</footer>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-			<script type="text/javascript">
-				function configureAhoy() {
-				ahoy.configure({
-				visitsUrl: "https://usebasin.com/ahoy/visits",
-				eventsUrl: "https://usebasin.com/ahoy/events",
-				page: "9acb361a134a"
-				});
-				ahoy.trackView();
-				ahoy.trackSubmits();
-				}
-				</script>
-				<script src="https://cdn.jsdelivr.net/npm/ahoy.js@0.3.4/dist/ahoy.min.js" async defer onload="configureAhoy()" ></script>
-
-	</body>
+    
+    </footer>
+  </body>
 </html>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
