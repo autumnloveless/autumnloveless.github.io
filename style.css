@@ -102,3 +102,18 @@ footer {
   justify-content: center;
   margin-bottom: 15px;
 }
+
+@media screen and (max-width: 500px) {
+  .details-container {
+    min-width: 200px;
+  }
+  .personal-info-container {
+    min-width: 250px;
+  }
+  #personal-info-section {
+    flex-direction: column;
+  }
+  #personal-info-details-container {
+    align-items: flex-start;
+  }
+}
