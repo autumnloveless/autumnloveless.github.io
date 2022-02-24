@@ -1,10 +1,12 @@
 :root {
-  --bg-color: #1f364d;
-  --font-color: #9cb3c9;
-  --alt-bg-color: #0e2439;
-  --header-bg-color: #666;
-  --header-bg-color-hover: #444;
-  --header-color: #fff;
+  --bg-color: #2e4e6e;
+  --font-color: #2b2e33;
+  --title-bg-color: rgba(255, 255, 255, 0.6);
+  --alt-bg-color: rgba(255, 255, 255, 0.6);
+  --opaque-bg-color: rgba(255, 255, 255, 0.8);
+  --header-bg-color: rgb(61, 57, 57);
+  --header-bg-color-hover: rgb(27, 73, 104);
+  --title-color: #2b2e33;
 }
 
 main {
@@ -22,18 +24,39 @@ p {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   transition: 0.3s;
-  max-width: 1100px;
+  max-width: 1400px;
   overflow: hidden;
-  background-color: var(--bg-color);
   color: var(--font-color);
+  background-color: var(--bg-color);
+  background-image: url("/background-image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 #name {
-  color: #fff;
+  color: var(--title-color);
 }
 
 .contact-card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+  display: flex;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: lightcoral;
+  color:#2b2e33;
+}
+
+.close-button:hover {
+  background-color: rgb(233, 86, 86);
+  color:#2b2e33;
+  text-decoration: none;
 }
 
 .contact-card-header {
@@ -42,7 +65,7 @@ p {
   transition: 0.3s;
   display: flex;
   justify-content: flex-end;
-  color: var(--header-color);
+  align-items: center;
   height: 40px;
 }
 
@@ -51,9 +74,20 @@ p {
 }
 
 .contact-card-body {
+  padding: 25px 25px 0 25px;
   display: flex;
-  padding: 25px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-content {
+  display: flex;
   flex-wrap: wrap;
+}
+
+.last-updated {
+  padding: 10px;
+  font-size: small;
 }
 
 .personal-info-container {
@@ -65,9 +99,18 @@ p {
   display: flex;
   flex: 2;
   flex-direction: column;
-  background-color: var(--alt-bg-color);
   border-radius: 3px;
   min-width: 450px;
+  
+  background-color: var(--alt-bg-color);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  transition: 0.3s;
+}
+
+.details-container:hover {
+  background-color: var(--opaque-bg-color);
 }
 
 .contact-card-section {
@@ -95,6 +138,19 @@ p {
 #personal-info-section {
   display: flex;
   align-items: flex-start;
+  padding: 10px 0px 20px 0px;
+  margin-bottom: 20px;
+
+  background-color: var(--title-bg-color);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+#personal-info-section:hover {
+  background-color: var(--opaque-bg-color);
 }
 
 footer {
@@ -105,12 +161,31 @@ footer {
   margin-bottom: 15px;
 }
 
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px,1fr));
+  gap: 2px 10px;
+}
+
+.grid-wrapper-wide {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  gap: 0px 10px;
+}
+
+.bold-on-hover:hover {
+  font-weight: 500;
+}
+
 @media screen and (max-width: 550px) {
   .details-container {
     min-width: 250px;
   }
   .personal-info-container {
     min-width: 250px;
+  }
+  .main-content {
+    flex-direction: column;
   }
   #personal-info-section {
     flex-direction: column;

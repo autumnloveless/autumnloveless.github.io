@@ -1,75 +1,130 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VLWN5C13HD"></script>
+    <script src="https://getinsights.io/js/insights.js"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-VLWN5C13HD');
+        insights.init('NzP5VSr6pvSXgtQW');
+        insights.trackPages();
     </script>
-    <!-- End Google Analytics Tag -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Autumn Loveless</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="imported-styles.css">
+    <script src="./index.js"></script>
 </head>
   <body>
     <main>
-        <article class="contact-card m-4">
-            <div class="contact-card-header"></div>
+        <article class="contact-card m-md-4 m-2">
+            <div class="contact-card-header">
+                <a class="close-button"></a>
+            </div>
             <div class="contact-card-body">
-                <div class="container personal-info-container">
-                    <section id="personal-info-section" class="contact-card-section">
-                        <div id="profile-picture-container">
-                            <img id="profile-picture" class="" src="icons/person.svg" alt="">
-                        </div>
-                        <div id="personal-info-details-container">
-                            <h1 id="name" class="personal-info-field">Autumn Loveless</h1>
-                            <p class="personal-info-field">Software Developer & Maker</p>
-                            <p class="personal-info-field">Cambridge, MA, USA</p>
-                        </div>
-                    </section>
-                    <!-- <section id="interactive-animation-section" class="contact-card-section d-none d-lg-block">
-                        I am an animation5
-                    </section> -->
+                <div class="main-content">
+                    <div class="container personal-info-container">
+                        <section id="personal-info-section" class="">
+                            <div id="profile-picture-container">
+                                <img id="profile-picture" class="" src="icons/person.svg" alt="">
+                            </div>
+                            <div id="personal-info-details-container">
+                                <h1 id="name" class="personal-info-field">Autumn Loveless</h1>
+                                <p class="personal-info-field bold-on-hover">Software Developer & Maker</p>
+                                <p class="personal-info-field bold-on-hover">Norman, OK, USA</p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="container details-container">
+                        <section id="description-section" class="contact-card-section">
+                            <h2 class="section-title">About Me</h2>
+                            <p class="section-text">
+                                I am a professional software developer, amateur roboticist, and hobbyist game creator. 
+                                I'm passionate about everything tech, engineering, and humanities related.
+                                Looking to learn more, grow as a person,
+                                and do my part to help my communities and improve the world.
+                            </p>
+                        </section>
+                        <section id="skills-section" class="contact-card-section">
+                            <h2 class="section-title">Skills</h2>
+                            <p class="section-text">
+                                Professional full-stack web and app development. 
+                                Experience with embedded IOT, microcontroller, and robotics development,
+                                3D printing & modeling, and game development.
+    
+                                <br><br>
+    
+                                <strong>Stuff I Know:</strong>
+                                <!-- <br> - C++, C#, .NET (Core and Framework), Java, Ruby on Rails,
+                                <br> - JavaScript, React, Angular, Vue, PHP, Laravel, Python, Flask, FastAPI
+                                <br> - Git/Version Control, Agile, Scrum, Jira, SQL, PostgreSQL, MongoDB, MariaDB
+                                <br> - Arduino, MATLAB, LabVIEW, AWS, Azure Cloud, Firebase
+                                <br> - Docker, Jenkins, Pytest, Pylint, Mypy, SonarCloud
+                                <br> - Elasticsearch, Redis,  -->
+
+
+                                <div class="grid-wrapper">
+                                    <span class="bold-on-hover">C++</span> 
+                                    <span class="bold-on-hover">C#</span> 
+                                    <span class="bold-on-hover">.NET</span> 
+                                    <span class="bold-on-hover">Java</span> 
+                                    <span class="bold-on-hover">Ruby</span>
+                                    <span class="bold-on-hover">Rails</span>
+                                    <span class="bold-on-hover">JavaScript</span> 
+                                    <span class="bold-on-hover">React</span> 
+                                    <span class="bold-on-hover">Angular</span> 
+                                    <span class="bold-on-hover">Vue</span> 
+                                    <span class="bold-on-hover">PHP</span> 
+                                    <span class="bold-on-hover">Laravel</span>
+                                    <span class="bold-on-hover">Python</span> 
+                                    <span class="bold-on-hover">Flask</span> 
+                                    <span class="bold-on-hover">FastAPI</span> 
+                                    <span class="bold-on-hover">Git</span> 
+                                    <span class="bold-on-hover">Agile</span>
+                                    <span class="bold-on-hover">Scrum</span> 
+                                    <span class="bold-on-hover">Jira</span> 
+                                    <span class="bold-on-hover">SQL</span> 
+                                    <span class="bold-on-hover">PostgreSQL</span> 
+                                    <span class="bold-on-hover">MongoDB</span> 
+                                    <span class="bold-on-hover">MariaDB</span>
+                                    <span class="bold-on-hover">Arduino</span> 
+                                    <span class="bold-on-hover">MATLAB</span> 
+                                    <span class="bold-on-hover">LabVIEW</span> 
+                                    <span class="bold-on-hover">AWS</span> 
+                                    <span class="bold-on-hover">Azure</span>
+                                    <span class="bold-on-hover">Firebase</span> 
+                                    <span class="bold-on-hover">Docker</span> 
+                                    <span class="bold-on-hover">Jenkins</span> 
+                                    <span class="bold-on-hover">Pytest</span> 
+                                    <span class="bold-on-hover">Pylint</span> 
+                                    <span class="bold-on-hover">Mypy</span>
+                                    <span class="bold-on-hover">SonarCloud</span> 
+                                    <span class="bold-on-hover">Elasticsearch</span> 
+                                    <span class="bold-on-hover">Redis</span>
+                                </div>
+
+    
+                                <br><br>
+                                <strong>Stuff I Want To Learn:</strong>
+
+                                <div class="grid-wrapper-wide">
+                                    <span class="bold-on-hover">ROS</span>
+                                    <span class="bold-on-hover">Machine Learning</span>
+                                    <span class="bold-on-hover">Neural Networks</span>
+                                    <span class="bold-on-hover">Tensorflow</span>
+                                    <span class="bold-on-hover">Keras</span>
+                                    <span class="bold-on-hover">Robotics Automation</span>
+                                    <span class="bold-on-hover">Machine Learning in Robotics</span>
+                                    <span class="bold-on-hover">Rocketry</span>
+                                    <span class="bold-on-hover">Sensor Fusion</span>
+                                    <span class="bold-on-hover">Lidar</span>
+                                    <span class="bold-on-hover">Drone Mapping</span>
+                                    <span class="bold-on-hover">Swarm Orchestration</span>
+                                </div>
+                            </p>
+                        </section>
+                    </div>
                 </div>
-                <div class="container details-container">
-                    <section id="description-section" class="contact-card-section">
-                        <h2 class="section-title">About Me</h2>
-                        <p class="section-text">
-                            I am a professional full-stack developer, and amateur roboticist. 
-                            Passionately curious about everything tech, engineering, and humanities related.
-                            Looking to learn more, grow as a person,
-                            and do my part to improve the world and help my communities.
-                        </p>
-                    </section>
-                    <section id="skills-section" class="contact-card-section">
-                        <h2 class="section-title">Skills</h2>
-                        <p class="section-text">
-                            Professional full-stack web and app development. 
-                            Experience with embedded IOT, microcontroller, and robotics development,
-                            3D printing & modeling, and game development.
-
-                            <br><br>
-
-                            <strong>Known Programming Tools:</strong>
-                            <br> - C++, C#, .NET (Core and Framework), Java, Ruby on Rails,
-                            <br> - JavaScript, React, Angular, Vue, PHP, Laravel, Python, Flask,
-                            <br> - Git/Version Control, Agile, Scrum, SQL, PostgreSQL, MongoDB
-                            <br> - Arduino, MATLAB, LabVIEW, AWS, Azure Cloud, Firebase
-
-                            <br><br>
-                            <strong>To Learn:</strong>
-                            <br> - ROS, Machine Learning and Neural Networks: Tensorflow, Keras
-                            <br> - Robotics Automation, Machine Learning in Robotics
-                            <br> - Rocketry, Drone Technology, Swarm Technology, Lidar
-                        </p>
-                    </section>
-                </div>
+                <div class="last-updated bold-on-hover">Last Updated: Feb 23 2022</div>
             </div>
         </article>
     </main>
