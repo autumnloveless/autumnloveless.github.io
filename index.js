@@ -6,10 +6,12 @@ let canvas = document.getElementById("snake-canvas")
 
 // toggle canvas view
 mainCloseButton.onclick = () => { 
-  mainContainer.classList.add("d-none"); 
-  mainToggleButton.classList.remove("d-none"); 
-  canvas.classList.remove("d-none"); 
-  startGame();
+  if(window.innerWidth > 1200){
+    mainContainer.classList.add("d-none"); 
+    mainToggleButton.classList.remove("d-none"); 
+    canvas.classList.remove("d-none"); 
+    startGame();
+  }
 }
 
 mainToggleButton.onclick = () => { 
