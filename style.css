@@ -175,7 +175,7 @@ footer {
 }
 
 .bold-on-hover:hover {
-  font-weight: 500;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 550px) {
