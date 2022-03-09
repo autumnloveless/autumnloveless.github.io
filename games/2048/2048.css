@@ -1,5 +1,6 @@
 .game-2048-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 2;
@@ -14,9 +15,10 @@
 }
 
 #game-board {
+    --max-size: 100px;
     display: grid;
-    grid-template-columns: repeat(var(--grid-size), var(--cell-size));
-    grid-template-rows: repeat(var(--grid-size), var(--cell-size));
+    grid-template-columns: repeat(var(--grid-size), min(var(--cell-size),var(--max-size)));
+    grid-template-rows: repeat(var(--grid-size), min(var(--cell-size),var(--max-size)));
     background-color: #3d3939;
     gap: var(--cell-gap);
     font-size: 6vmin;
@@ -35,11 +37,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: var(--cell-size);
-    height: var(--cell-size);
+    width: min(var(--cell-size),var(--max-size));
+    height: min(var(--cell-size),var(--max-size));
     border-radius: 1vmin;
-    top: calc(var(--y) * (var(--cell-size) + var(--cell-gap))  + var(--cell-gap));
-    left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+    top: calc(var(--y) * (min(var(--cell-size),var(--max-size)) + var(--cell-gap))  + var(--cell-gap));
+    left: calc(var(--x) * (min(var(--cell-size),var(--max-size)) + var(--cell-gap)) + var(--cell-gap));
     background-color: hsl(200, 50%, var(--background-lightness));
     color: hsl(200, 25%, var(--text-lightness));
     animation: showTile 200ms ease-in-out;

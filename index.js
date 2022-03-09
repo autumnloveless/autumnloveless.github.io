@@ -12,24 +12,7 @@ snakeTab.addEventListener('hidden.bs.tab', () => snakeGame.stop())
 
 // ================= 2048 =========================
 setup2048Input()
-
-// const _2048Tab = document.getElementById("game-2048-tab")
-// _2048Tab.addEventListener('shown.bs.tab', () => console.log("showing 2048"))
-// _2048Tab.addEventListener('hidden.bs.tab', () => console.log("hiding 2048"))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let game_2048_highscore = 0
 
 
 
@@ -57,7 +40,5 @@ https://www.linkedin.com/in/autumn-loveless/
 
 Enjoy the site,
 Autumn
-
-P.S. try the button on the top right
 
 `)

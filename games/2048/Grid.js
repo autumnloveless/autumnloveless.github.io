@@ -1,5 +1,5 @@
 const GRID_SIZE = 4
-const CELL_SIZE = 16
+const CELL_SIZE = 18
 const CELL_GAP  = 2
 
 export default class Grid {
@@ -12,8 +12,26 @@ export default class Grid {
         this.#cells = createCellElements(gridElement).map((cellElement, i) => new Cell(cellElement, i % GRID_SIZE, Math.floor(i / GRID_SIZE)))
     }
 
+    get cells() { return this.#cells }
+
     get #emptyCells() {
         return this.#cells.filter(cell => cell.tile == null)
+    }
+
+    get cellsByRow() {
+        return this.#cells.reduce((cellGrid, cell) => {
+            cellGrid[cell.y] = cellGrid[cell.y] || []
+            cellGrid[cell.y][cell.x] = cell
+            return cellGrid
+        }, [])
+    }
+
+    get cellsByColumn() {
+        return this.#cells.reduce((cellGrid, cell) => {
+            cellGrid[cell.x] = cellGrid[cell.x] || []
+            cellGrid[cell.x][cell.y] = cell
+            return cellGrid
+        }, [])
     }
 
     randomEmptyCell() {
@@ -27,6 +45,7 @@ class Cell {
     #x
     #y
     #tile
+    #mergeTile
     
     constructor(cellElement, x, y) {
         this.#cellElement = cellElement
@@ -34,15 +53,35 @@ class Cell {
         this.#y = y
     }
 
-    get tile(){
-        return this.#tile
-    }
+    get x() { return this.#x }
+    get y() { return this.#y }
+    get tile(){ return this.#tile }
+    get mergeTile() { return this.#mergeTile }
 
     set tile(value){
         this.#tile = value
-        if(this.value === null) return
+        if(value == null) return
         this.#tile.x = this.#x
         this.#tile.y = this.#y
+    }
+
+    set mergeTile(value) {
+        this.#mergeTile = value
+        if (value == null) return
+        this.#mergeTile.x = this.#x
+        this.#mergeTile.y = this.#y
+    } 
+
+    canAccept(tile) {
+        return this.tile == null || 
+        (this.mergeTile == null && this.tile.value === tile.value)
+    }
+
+    mergeTiles() {
+        if (this.tile == null || this.mergeTile == null) return
+        this.tile.value = this.tile.value + this.mergeTile.value
+        this.mergeTile.remove()
+        this.mergeTile = null
     }
 }
 
