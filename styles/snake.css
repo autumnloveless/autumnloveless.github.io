@@ -1,6 +1,9 @@
 canvas {
   display: block;
-  z-index: 2
+  z-index: 2;
+  height: 80vh;
+  width: 95.5vw;
+  max-width: 1400px;
 }
 
 #main-toggle-button {
@@ -12,6 +15,5 @@ canvas {
 }
 
 #snake {
-  width: 1350px;
-  height: 695px;
+  /* width: 100%; */
 }

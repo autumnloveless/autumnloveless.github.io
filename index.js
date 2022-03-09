@@ -5,6 +5,7 @@ let tabEl = document.querySelector('button[data-bs-toggle="tab"]')
 tabEl.addEventListener('shown.bs.tab', function (event) {
   if(event.relatedTarget?.id == "snake-tab") {
     snakeGame.reset();
+    snakeGame.stop();
   }
 })
 
@@ -14,6 +15,8 @@ tabEl.addEventListener('hidden.bs.tab', function (event) {
     snakeGame.start();
   }
 })
+
+window.addEventListener('resize', () => snakeGame.reset(), false);
 
 
 console.log(`

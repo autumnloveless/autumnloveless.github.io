@@ -2,6 +2,8 @@ let snakeContainer = document.querySelector(".contact-card-body.tab-content")
 let snakeCanvas = document.getElementById("snake-canvas")
 let snakeCanvasContext = snakeCanvas.getContext("2d")
 
+// snakeCanvas.height = snakeCanvas.width * 0.1;
+
 class Snake {
     constructor(context, moveSpeed = 4, color="#333", radius=10) {
         this.context = context
@@ -121,8 +123,12 @@ export default class SnakeGame {
 
     reset() {
         document.removeEventListener('keydown', (event) => this.snake.updateDirection(event.key))
-        this.runGame = false
         this.snake = new Snake(this.context)
+        this.fruit = new Fruit(this.context)
+    }
+
+    stop() {
+        this.runGame = false
     }
 
     update() {
@@ -155,6 +161,7 @@ export default class SnakeGame {
         for (let i=1; i<this.snake.body.length-1; i++) {
           if (this.snake.body[0].x == this.snake.body[i].x && this.snake.body[0].y == this.snake.body[i].y) { 
             this.reset()
+            this.stop()
             setTimeout(() => this.start(), 300)
            }
         }
@@ -162,6 +169,7 @@ export default class SnakeGame {
         // with wall
         if(this.snake.body[0].x > snakeCanvas.width || this.snake.body[0].x < 0 || this.snake.body[0].y > snakeCanvas.height || this.snake.body[0].y < 0 ){
             this.reset()
+            this.stop()
             setTimeout(() => this.start(), 300)
         }
     }
