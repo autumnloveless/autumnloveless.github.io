@@ -122,12 +122,12 @@ export default class SnakeGame {
     }
 
     reset() {
-        document.removeEventListener('keydown', (event) => this.snake.updateDirection(event.key))
         this.snake = new Snake(this.context)
         this.fruit = new Fruit(this.context)
     }
-
+    
     stop() {
+        document.removeEventListener('keydown', (event) => this.snake.updateDirection(event.key))
         this.runGame = false
     }
 
@@ -180,8 +180,8 @@ function randomIntFromInterval(min, max) { // min and max inclusive
 }
 
 window.addEventListener('resize', resizeCanvas, false);
-  function resizeCanvas() {
+function resizeCanvas() {
     snakeCanvas.width = snakeContainer.clientWidth;
     snakeCanvas.height = snakeContainer.clientHeight;
-  }  
+}  
 resizeCanvas();

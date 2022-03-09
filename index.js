@@ -1,22 +1,34 @@
-import SnakeGame from './snake.js'
+import SnakeGame from './games/snake/snake.js'
+
+
+// ================= Snake ========================
 let snakeGame = new SnakeGame()
-
-let tabEl = document.querySelector('button[data-bs-toggle="tab"]')
-tabEl.addEventListener('shown.bs.tab', function (event) {
-  if(event.relatedTarget?.id == "snake-tab") {
-    snakeGame.reset();
-    snakeGame.stop();
-  }
-})
-
-tabEl.addEventListener('hidden.bs.tab', function (event) {
-  if(event.relatedTarget?.id == "snake-tab") {
-    snakeGame = new SnakeGame()
-    snakeGame.start();
-  }
-})
-
 window.addEventListener('resize', () => snakeGame.reset(), false);
+const snakeTab = document.getElementById("snake-tab")
+snakeTab.addEventListener('shown.bs.tab', () => snakeGame.start())
+snakeTab.addEventListener('hidden.bs.tab', () => snakeGame.stop())
+
+
+// ================= 2048 =========================
+const gameBoard = document.getElementById("game-board")
+const _2048Tab = document.getElementById("game-2048-tab")
+_2048Tab.addEventListener('shown.bs.tab', () => console.log("showing 2048"))
+_2048Tab.addEventListener('hidden.bs.tab', () => console.log("hiding 2048"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 console.log(`

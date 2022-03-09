@@ -1,0 +1,54 @@
+.game-2048-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    height: 80vh;
+    width: 95.5vw;
+    max-width: 1400px;
+}
+
+.game-2048-wrapper * {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size), var(--cell-size));
+    grid-template-rows: repeat(var(--grid-size), var(--cell-size));
+    background-color: #3d3939;
+    gap: var(--cell-gap);
+    font-size: 6vmin;
+    padding: 2vmin;
+    position: relative;
+    border-radius: 1vmin;
+}
+
+.cell {
+    background-color: #AAA;
+    border-radius: 1vmin;
+}
+
+.tile {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border-radius: 1vmin;
+    top: calc(var(--y) * (var(--cell-size) + var(--cell-gap))  + var(--cell-gap));
+    left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+    background-color: hsl(200, 50%, var(--background-lightness));
+    color: hsl(200, 25%, var(--text-lightness));
+    animation: showTile 200ms ease-in-out;
+    transition: 100ms ease-in-out;
+}
+
+@keyframes showTile {
+    0% {
+        opacity: .5%;
+        transform: scale(0);
+    }
+}
