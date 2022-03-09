@@ -11,7 +11,8 @@ snakeTab.addEventListener('hidden.bs.tab', () => snakeGame.stop())
 
 
 // ================= 2048 =========================
-setup2048Input()
+const game2048Tab = document.getElementById("game-2048-tab")
+game2048Tab.addEventListener('shown.bs.tab', () => setup2048Input())
 
 
 

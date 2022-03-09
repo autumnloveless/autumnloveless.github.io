@@ -77,7 +77,7 @@ class Cell {
         if (value == null) return
         this.#mergeTile.x = this.#x
         this.#mergeTile.y = this.#y
-    } 
+    }
 
     canAccept(tile) {
         return this.tile == null || 
@@ -89,6 +89,9 @@ class Cell {
         this.tile.value = this.tile.value + this.mergeTile.value
         this.mergeTile.remove()
         this.mergeTile = null
+
+
+        this.#cellElement.dispatchEvent(new CustomEvent('2048_increase_score', { bubbles: true, detail: { 'scoreIncrease': this.tile.value } }))
     }
 }
 

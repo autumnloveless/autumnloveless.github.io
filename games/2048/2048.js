@@ -3,6 +3,14 @@ import Tile from './Tile.js';
 
 export default function setup2048Input() { window.addEventListener("keydown", handleInput, { once: true }) }
 
+const loseMessageDiv = document.querySelector('.game-2048-wrapper .game-over-message')
+const highscoreDiv = document.querySelector('.game-2048-wrapper .highscore')
+const currentScoreDiv = document.querySelector('.game-2048-wrapper .score')
+let currentScore = 0
+let highscore = localStorage.getItem('2048-highscore') || 0
+window.addEventListener('2048_increase_score', increaseScore);
+setScores()
+
 const resetButton = document.querySelector('.game-2048-wrapper .reset-btn')
 resetButton.onclick = resetGame
 
@@ -50,11 +58,8 @@ async function handleInput(e) {
     grid.randomEmptyCell().tile = newTile
 
     if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
-        console.log("can't move!")
         newTile.waitForTransition(true).then(() => loseGame())
         return
-    } else {
-        console.log("can move")
     }
 
     setup2048Input()
@@ -130,12 +135,29 @@ function canMove(cells) {
 }
 
 function loseGame() {
-    
+    loseMessageDiv.classList.remove('d-none')
 }
 
 function resetGame(event) {
+    loseMessageDiv.classList.add('d-none')
+    currentScore = 0
+    setScores()
     grid = new Grid(gameBoard)
     grid.randomEmptyCell().tile = new Tile(gameBoard)
     grid.randomEmptyCell().tile = new Tile(gameBoard)
     setup2048Input()
+}
+
+function increaseScore(event) {
+    currentScore += event.detail.scoreIncrease
+    if(currentScore > highscore) { 
+        highscore = currentScore
+        localStorage.setItem('2048-highscore', highscore)
+    }
+    setScores()
+}
+
+function setScores() {
+    currentScoreDiv.textContent = "Score: " + currentScore
+    highscoreDiv.textContent = "Highscore: " + highscore
 }
