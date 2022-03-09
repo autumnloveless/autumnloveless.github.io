@@ -1,35 +1,19 @@
-// Switch context on button press
-let mainCloseButton = document.getElementById("main-close-button")
-let mainToggleButton = document.getElementById("main-toggle-button")
-let mainContainer = document.getElementById("main-container")
-let canvas = document.getElementById("snake-canvas")
+import SnakeGame from './snake.js'
+let snakeGame = new SnakeGame()
 
-let context = canvas.getContext("2d")
-snakeGame = new SnakeGame(context)
+let tabEl = document.querySelector('button[data-bs-toggle="tab"]')
+tabEl.addEventListener('shown.bs.tab', function (event) {
+  if(event.relatedTarget?.id == "snake-tab") {
+    snakeGame.reset();
+  }
+})
 
-window.addEventListener('resize', resizeCanvas, false);
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }  
-resizeCanvas();
-
-// toggle canvas view
-mainCloseButton.onclick = () => { 
-  if(window.innerWidth > 1200){
-    mainContainer.classList.add("d-none"); 
-    mainToggleButton.classList.remove("d-none"); 
-    canvas.classList.remove("d-none"); 
+tabEl.addEventListener('hidden.bs.tab', function (event) {
+  if(event.relatedTarget?.id == "snake-tab") {
+    snakeGame = new SnakeGame()
     snakeGame.start();
   }
-}
-
-mainToggleButton.onclick = () => { 
-  mainContainer.classList.remove("d-none"); 
-  mainToggleButton.classList.add("d-none"); 
-  canvas.classList.add("d-none"); 
-  snakeGame.reset();
-}
+})
 
 
 console.log(`

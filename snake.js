@@ -1,3 +1,7 @@
+let snakeContainer = document.querySelector(".contact-card-body.tab-content")
+let snakeCanvas = document.getElementById("snake-canvas")
+let snakeCanvasContext = snakeCanvas.getContext("2d")
+
 class Snake {
     constructor(context, moveSpeed = 4, color="#333", radius=10) {
         this.context = context
@@ -9,7 +13,7 @@ class Snake {
         this.velocity = [0,0]
         this.direction = ""
         
-        this.body.push({ x: window.innerWidth/2, y: window.innerHeight/2 })
+        this.body.push({ x: snakeContainer.clientWidth/2, y: snakeContainer.clientHeight/2 })
     }
 
     addTail() {
@@ -83,12 +87,12 @@ class Snake {
 }
 
 class Fruit {
-    constructor(context, margin = 100, color="lightcoral", radius=10) {
+    constructor(context, margin = 50, color="lightcoral", radius=10) {
         this.context = context
         this.color = color
         this.radius = radius
-        this.x = randomIntFromInterval(0, window.innerWidth-margin)
-        this.y = randomIntFromInterval(0, window.innerHeight-margin)
+        this.x = randomIntFromInterval(0, snakeContainer.clientWidth-margin)
+        this.y = randomIntFromInterval(0, snakeContainer.clientHeight-margin)
     }
 
     drawFruit(){
@@ -99,13 +103,14 @@ class Fruit {
     }
 }
 
-class SnakeGame {
-    constructor(context, collisionRadius = 15) {
-        this.context = context
+export default class SnakeGame {
+    constructor(collisionRadius = 15) {
+        this.context = snakeCanvasContext
         this.collisionRadius = collisionRadius
-        this.snake = new Snake(context)
-        this.fruit = new Fruit(context)
+        this.snake = new Snake(this.context)
+        this.fruit = new Fruit(this.context)
         this.runGame = false
+        resizeCanvas()
     }
 
     start() {
@@ -121,7 +126,7 @@ class SnakeGame {
     }
 
     update() {
-        this.context.clearRect(0, 0, window.innerWidth, window.innerHeight)
+        this.context.clearRect(0, 0, snakeContainer.clientWidth, snakeContainer.clientHeight)
         this.fruit.drawFruit()
         this.snake.move()
         this.snake.drawSnake()
@@ -155,7 +160,7 @@ class SnakeGame {
         }
         
         // with wall
-        if(this.snake.body[0].x > canvas.width || this.snake.body[0].x < 0 || this.snake.body[0].y > canvas.height || this.snake.body[0].y < 0 ){
+        if(this.snake.body[0].x > snakeCanvas.width || this.snake.body[0].x < 0 || this.snake.body[0].y > snakeCanvas.height || this.snake.body[0].y < 0 ){
             this.reset()
             setTimeout(() => this.start(), 300)
         }
@@ -165,3 +170,10 @@ class SnakeGame {
 function randomIntFromInterval(min, max) { // min and max inclusive 
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
+
+window.addEventListener('resize', resizeCanvas, false);
+  function resizeCanvas() {
+    snakeCanvas.width = snakeContainer.clientWidth;
+    snakeCanvas.height = snakeContainer.clientHeight;
+  }  
+resizeCanvas();

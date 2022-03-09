@@ -1,14 +1,6 @@
-.snake-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-}
-
 canvas {
   display: block;
+  z-index: 2
 }
 
 #main-toggle-button {
@@ -17,4 +9,9 @@ canvas {
   left: 92%;
   background-color: rgb(37, 103, 146, 0.9);
   border: none;
+}
+
+#snake {
+  width: 1350px;
+  height: 695px;
 }
