@@ -12,7 +12,6 @@ snakeTab.addEventListener('hidden.bs.tab', () => snakeGame.stop())
 
 // ================= 2048 =========================
 setup2048Input()
-let game_2048_highscore = 0
 
 
 

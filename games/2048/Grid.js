@@ -9,6 +9,13 @@ export default class Grid {
         gridElement.style.setProperty("--grid-size", GRID_SIZE)
         gridElement.style.setProperty("--cell-size", CELL_SIZE + 'vmin')
         gridElement.style.setProperty("--cell-gap", CELL_GAP + 'vmin')
+        
+        // clear game board
+        while (gridElement.firstChild) {
+            gridElement.removeChild(gridElement.firstChild);
+        }
+
+        // add new cells
         this.#cells = createCellElements(gridElement).map((cellElement, i) => new Cell(cellElement, i % GRID_SIZE, Math.floor(i / GRID_SIZE)))
     }
 

@@ -1,12 +1,13 @@
 import Grid from './Grid.js';
 import Tile from './Tile.js';
 
-export default function setup2048Input() {
-    window.addEventListener("keydown", handleInput, { once: true })
-}
+export default function setup2048Input() { window.addEventListener("keydown", handleInput, { once: true }) }
+
+const resetButton = document.querySelector('.game-2048-wrapper .reset-btn')
+resetButton.onclick = resetGame
 
 const gameBoard = document.getElementById("game-board")
-const grid = new Grid(gameBoard)
+let grid = new Grid(gameBoard)
 grid.randomEmptyCell().tile = new Tile(gameBoard)
 grid.randomEmptyCell().tile = new Tile(gameBoard)
 
@@ -130,4 +131,11 @@ function canMove(cells) {
 
 function loseGame() {
     
+}
+
+function resetGame(event) {
+    grid = new Grid(gameBoard)
+    grid.randomEmptyCell().tile = new Tile(gameBoard)
+    grid.randomEmptyCell().tile = new Tile(gameBoard)
+    setup2048Input()
 }
