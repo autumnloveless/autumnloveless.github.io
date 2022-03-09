@@ -44,6 +44,7 @@
     color: hsl(200, 25%, var(--text-lightness));
     animation: showTile 200ms ease-in-out;
     transition: 100ms ease-in-out;
+    font-weight: bold;
 }
 
 @keyframes showTile {

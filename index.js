@@ -1,4 +1,5 @@
 import SnakeGame from './games/snake/snake.js'
+import setup2048Input from './games/2048/2048.js'
 
 
 // ================= Snake ========================
@@ -10,10 +11,11 @@ snakeTab.addEventListener('hidden.bs.tab', () => snakeGame.stop())
 
 
 // ================= 2048 =========================
-const gameBoard = document.getElementById("game-board")
-const _2048Tab = document.getElementById("game-2048-tab")
-_2048Tab.addEventListener('shown.bs.tab', () => console.log("showing 2048"))
-_2048Tab.addEventListener('hidden.bs.tab', () => console.log("hiding 2048"))
+setup2048Input()
+
+// const _2048Tab = document.getElementById("game-2048-tab")
+// _2048Tab.addEventListener('shown.bs.tab', () => console.log("showing 2048"))
+// _2048Tab.addEventListener('hidden.bs.tab', () => console.log("hiding 2048"))
 
 
 
