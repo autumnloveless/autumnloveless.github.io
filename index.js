@@ -1,12 +1,23 @@
 import SnakeGame from './games/snake/snake.js'
 import setup2048Input from './games/2048/2048.js'
 import lorenzViewer from './games/lorenz/lorenz.js'
+import rosslerViewer from './games/rossler/rossler.js'
+
+
+// ================ Home ========================
+const backgroundDiv = document.querySelector('.contact-card')
+const homeTab = document.getElementById("home-tab")
+homeTab.addEventListener('shown.bs.tab', () => backgroundDiv.style.backgroundImage = "url(../images/background-image.jpg)")
+homeTab.addEventListener('hidden.bs.tab', () => backgroundDiv.style.backgroundImage = "none")
 
 // ================= Snake ========================
 let snakeGame = new SnakeGame()
-window.addEventListener('resize', () => snakeGame.reset(), false);
+window.addEventListener('resize', () => snakeGame.reset());
 const snakeTab = document.getElementById("snake-tab")
-snakeTab.addEventListener('shown.bs.tab', () => snakeGame.start())
+snakeTab.addEventListener('shown.bs.tab', () => {
+  SnakeGame.resizeCanvas()
+  snakeGame.start()
+})
 snakeTab.addEventListener('hidden.bs.tab', () => snakeGame.stop())
 
 
@@ -15,16 +26,21 @@ const game2048Tab = document.getElementById("game-2048-tab")
 game2048Tab.addEventListener('shown.bs.tab', () => setup2048Input())
 
 // ================ Lorenz =======================
+const lorenzTab = document.getElementById("lorenz-tab")
 let lorenzP5 = new p5(lorenzViewer, 'lorenz-wrapper')
 lorenzP5.noLoop()
-let wrapperDiv = document.querySelector(".contact-card-body.tab-content")
-const lorenzTab = document.getElementById("lorenz-tab")
-lorenzTab.addEventListener('shown.bs.tab', () =>  { 
-  lorenzP5.loop()
-  lorenzP5.resizeCanvas(wrapperDiv.clientWidth, wrapperDiv.clientHeight)
-})
+
+lorenzTab.addEventListener('shown.bs.tab', () =>  lorenzP5.loop())
 lorenzTab.addEventListener('hidden.bs.tab', () => lorenzP5.noLoop())
-window.addEventListener('resize', () => lorenzP5.resizeCanvas(wrapperDiv.clientWidth, wrapperDiv.clientHeight), false);
+
+
+// ============== Rossler ===========================
+const rosslerTab = document.getElementById("rossler-tab")
+let rosslerP5 = new p5(rosslerViewer, 'rossler-wrapper')
+rosslerP5.noLoop()
+
+rosslerTab.addEventListener('shown.bs.tab', () =>  rosslerP5.loop())
+rosslerTab.addEventListener('hidden.bs.tab', () => rosslerP5.noLoop())
 
 console.log(`
                   |--__

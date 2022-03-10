@@ -1,16 +1,18 @@
 let wrapperDiv = document.querySelector(".contact-card-body.tab-content")
 
-export default function lorenzViewer(p) {
-    const a = 10, b = 8 / 3, c = 28
-    const stepSize = 0.01
-    let lorenzVertices = []
-    let totalLorenzVertices = []
+export default function rosslerViewer(p) {
+    const a = 0.1, b = 0.1, c = 14
+    const stepSize = 0.03
+    let rosslerVertices = []
+    let totalRosslerVertices = []
     let position
+    let startingIndex = 2000
 
     let rotation = 0
     let rotateSlider
     let rotateSpan
 
+    let ultimateMaxLength = 5000
     let maxLengthSlider
     let maxLengthSpan
 
@@ -22,7 +24,7 @@ export default function lorenzViewer(p) {
 
     let wiggle = 0
     let movingWiggleIndex = 0
-    let startingWiggleIndex = 0
+    let startingWiggleIndex = startingIndex
     let totalVerticesCalculated = 0;
     let wiggleHeight = 2;
 
@@ -30,6 +32,12 @@ export default function lorenzViewer(p) {
         p.createCanvas(wrapperDiv.clientWidth, wrapperDiv.clientHeight, p.WEBGL);
         position = p.createVector(0.1, 0, 0)
         p.colorMode(p.HSB)
+
+        for(let i=0; i<startingIndex; i++){
+            position = nextRosslerValue(position)
+            rosslerVertices.push(position) 
+            totalRosslerVertices.push(position) 
+        }
 
         // rotation controls
         rotateSpan = p.createSpan('Rotation Speed:')
@@ -72,38 +80,38 @@ export default function lorenzViewer(p) {
         let rotateSpeed = p.map(rotateSlider.value(), 0, 200, 0, 1);
         rotation += 0.01 * rotateSpeed
 
-        // show lorenz point
+        // show rossler point
         p.noFill()
         p.strokeWeight(1);
         p.scale(7)
         p.stroke(230, 44, 44);
-        displayVerticesOutline(lorenzVertices)
+        displayVerticesOutline(rosslerVertices)
 
         // lead point
         p.strokeWeight(4);
-        p.point(lorenzVertices[lorenzVertices.length - 1])
+        p.point(rosslerVertices[rosslerVertices.length - 1])
 
-        // Add next lorenz point
-        position = nextLorenzValue(position)
+        // Add next rossler point
+        position = nextRosslerValue(position)
         totalVerticesCalculated++
-        lorenzVertices.push(position)
-        totalLorenzVertices.push(position)
+        rosslerVertices.push(position)
+        totalRosslerVertices.push(position)
 
         // backup arr with total maximum allowed length
-        if (totalLorenzVertices.length > 2300) {
-            totalLorenzVertices = totalLorenzVertices.slice(totalLorenzVertices.length-3000)
+        if (totalRosslerVertices.length > ultimateMaxLength) {
+            totalRosslerVertices = totalRosslerVertices.slice(totalRosslerVertices.length-ultimateMaxLength)
         }
 
         // variable length vertices arr
-        let maxLength = p.map(maxLengthSlider.value(), 0, 200, 100,3000); // 1600
-        if (lorenzVertices.length > maxLength+5) {
-            lorenzVertices = lorenzVertices.slice(3)
+        let maxLength = p.map(maxLengthSlider.value(), 0, 200, 100,ultimateMaxLength);
+        if (rosslerVertices.length > maxLength+5) {
+            rosslerVertices = rosslerVertices.slice(3)
         }
-        else if (lorenzVertices.length > maxLength) {
-            lorenzVertices = lorenzVertices.slice(lorenzVertices.length-maxLength)
+        else if (rosslerVertices.length > maxLength) {
+            rosslerVertices = rosslerVertices.slice(rosslerVertices.length-maxLength)
         } 
-        else if(lorenzVertices.length < maxLength - 5 && totalLorenzVertices.length > lorenzVertices.length+5) {
-            lorenzVertices = totalLorenzVertices.slice(totalLorenzVertices.length - (lorenzVertices.length+5))
+        else if(rosslerVertices.length < maxLength - 5 && totalRosslerVertices.length > rosslerVertices.length+5) {
+            rosslerVertices = totalRosslerVertices.slice(totalRosslerVertices.length - (rosslerVertices.length+5))
         }
 
         wiggle = p.map(wiggleSlider.value(), 0, 200, 0,5);
@@ -129,10 +137,10 @@ export default function lorenzViewer(p) {
         p.resizeCanvas(wrapperDiv.clientWidth, wrapperDiv.clientHeight)
     }
 
-    function nextLorenzValue({x, y, z}) {
-        let dx = (a * (y - x)) * stepSize
-        let dy = (x * (c - z) - y) * stepSize
-        let dz = ((x * y) - (b * z)) * stepSize
+    function nextRosslerValue({x, y, z}) {
+        let dx = ((-1 * y) - z) * stepSize
+        let dy = (x + (a * y)) * stepSize
+        let dz = (b + z * (x - c)) * stepSize
         return p.createVector(x + dx, y + dy, z + dz)
     }
 
@@ -141,12 +149,12 @@ export default function lorenzViewer(p) {
         let index = 0;
         for (let vert of vertices) {
             let {x,y,z} = vert
-            x += p.sin(wiggle * (startingWiggleIndex + index)) / wiggleHeight
+            x += p.sin(wiggle * (startingWiggleIndex + index/20)) / wiggleHeight
             p.vertex(x, y, z);
             index += 1;
         }
         p.endShape()
-        movingWiggleIndex += 0.1
+        movingWiggleIndex += 0.001
     }
 
 }

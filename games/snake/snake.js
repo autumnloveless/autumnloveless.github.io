@@ -112,7 +112,7 @@ export default class SnakeGame {
         this.snake = new Snake(this.context)
         this.fruit = new Fruit(this.context)
         this.runGame = false
-        resizeCanvas()
+        SnakeGame.resizeCanvas()
     }
 
     start() {
@@ -173,15 +173,16 @@ export default class SnakeGame {
             setTimeout(() => this.start(), 300)
         }
     }
+
+    static resizeCanvas() {
+        snakeCanvas.width = snakeContainer.clientWidth;
+        snakeCanvas.height = snakeContainer.clientHeight;
+    }  
 }
 
 function randomIntFromInterval(min, max) { // min and max inclusive 
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-window.addEventListener('resize', resizeCanvas, false);
-function resizeCanvas() {
-    snakeCanvas.width = snakeContainer.clientWidth;
-    snakeCanvas.height = snakeContainer.clientHeight;
-}  
-resizeCanvas();
+window.addEventListener('resize', SnakeGame.resizeCanvas, false);
+SnakeGame.resizeCanvas();
