@@ -9,6 +9,15 @@
   --title-color: #2b2e33;
 }
 
+.tab-wrapper {
+  display: block;
+  z-index: 2;
+  height: 80vh;
+  width: 95.5vw;
+  max-width: 1400px;
+  position: relative;
+}
+
 .nav.nav-tabs {
   width: 100%;
   padding: 8px 0 0 15px;
