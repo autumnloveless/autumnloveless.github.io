@@ -194,9 +194,9 @@ footer {
   gap: 0px 10px;
 }
 
-.bold-on-hover:hover {
+/* .bold-on-hover:hover {
   font-weight: bold;
-}
+} */
 
 @media screen and (max-width: 550px) {
   .details-container {

@@ -1,5 +1,5 @@
-import SnakeGame from './games/snake/snake.js'
-import setup2048Input from './games/2048/2048.js'
+// import SnakeGame from './games/snake/snake.js'
+// import setup2048Input from './games/2048/2048.js'
 import lorenzViewer from './games/lorenz/lorenz.js'
 import rosslerViewer from './games/rossler/rossler.js'
 
@@ -11,19 +11,19 @@ homeTab.addEventListener('shown.bs.tab', () => backgroundDiv.style.backgroundIma
 homeTab.addEventListener('hidden.bs.tab', () => backgroundDiv.style.backgroundImage = "none")
 
 // ================= Snake ========================
-let snakeGame = new SnakeGame()
-window.addEventListener('resize', () => snakeGame.reset());
-const snakeTab = document.getElementById("snake-tab")
-snakeTab.addEventListener('shown.bs.tab', () => {
-  SnakeGame.resizeCanvas()
-  snakeGame.start()
-})
-snakeTab.addEventListener('hidden.bs.tab', () => snakeGame.stop())
+// let snakeGame = new SnakeGame()
+// window.addEventListener('resize', () => snakeGame.reset());
+// const snakeTab = document.getElementById("snake-tab")
+// snakeTab.addEventListener('shown.bs.tab', () => {
+//   SnakeGame.resizeCanvas()
+//   snakeGame.start()
+// })
+// snakeTab.addEventListener('hidden.bs.tab', () => snakeGame.stop())
 
 
 // ================= 2048 =========================
-const game2048Tab = document.getElementById("game-2048-tab")
-game2048Tab.addEventListener('shown.bs.tab', () => setup2048Input())
+// const game2048Tab = document.getElementById("game-2048-tab")
+// game2048Tab.addEventListener('shown.bs.tab', () => setup2048Input())
 
 // ================ Lorenz =======================
 const lorenzTab = document.getElementById("lorenz-tab")
